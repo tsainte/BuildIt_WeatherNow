@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityTableViewCell" id="KGk-i7-Jjw" customClass="CityTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4DF-it-Q2K">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="HVv-zX-5dm"/>
+                            <constraint firstAttribute="width" constant="30" id="bBG-ur-7bs"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hct-Bq-6qX">
+                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Hct-Bq-6qX" secondAttribute="trailing" id="27a-zp-7cb"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="4DF-it-Q2K" secondAttribute="leading" id="I7X-kX-CBr"/>
+                    <constraint firstItem="Hct-Bq-6qX" firstAttribute="height" secondItem="4DF-it-Q2K" secondAttribute="height" id="JTR-jb-Gmm"/>
+                    <constraint firstItem="Hct-Bq-6qX" firstAttribute="centerY" secondItem="4DF-it-Q2K" secondAttribute="centerY" id="SdR-Py-UTx"/>
+                    <constraint firstItem="Hct-Bq-6qX" firstAttribute="leading" secondItem="4DF-it-Q2K" secondAttribute="trailing" constant="8" id="vOM-S2-Ghm"/>
+                    <constraint firstAttribute="topMargin" secondItem="4DF-it-Q2K" secondAttribute="top" id="wez-6H-9zI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="flagImageView" destination="4DF-it-Q2K" id="Xuw-z6-hoz"/>
+                <outlet property="nameLabel" destination="Hct-Bq-6qX" id="i4x-7L-wgG"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
