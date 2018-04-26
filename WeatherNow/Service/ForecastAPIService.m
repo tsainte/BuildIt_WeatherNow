@@ -11,24 +11,24 @@
 #import "City.h"
 #import "Forecast.h"
 
-NSString * const appID = @"***REMOVED***";
+NSString * const appID = @"your_weather_api_client_secret";
 NSString * const forecastLink = @"http://api.openweathermap.org/data/2.5/forecast?q=%@&units=%@&mode=json&APPID=%@";
 //metric
 
 @implementation ForecastAPIService
 
 - (void)getCityAndForecastsWithCityName:(NSString *)cityName unit:(NSString *)unit success:(successResponse)success failure:(failureResponse)failure {
-    
+
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    
+
     NSString *path = [NSString stringWithFormat:forecastLink, cityName, unit, appID];
     [manager GET:path parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+
         NSError *error;
         City *city = [MTLJSONAdapter modelOfClass:[City class] fromJSONDictionary:responseObject[@"city"] error:&error];
         NSArray *forecasts = [MTLJSONAdapter modelsOfClass:[Forecast class] fromJSONArray:responseObject[@"list"] error:&error];
-                              
+
         NSDictionary *responseObjects = @{@"city" : city,
                                           @"forecasts" : forecasts};
         success(responseObjects);
